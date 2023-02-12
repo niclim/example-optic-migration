@@ -1,4 +1,4 @@
-name: "old release"
+name: "new release"
 
 on:
   # Or this can be modified to run on a `release` branch
