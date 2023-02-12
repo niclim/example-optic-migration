@@ -37,7 +37,6 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@useoptic/optic-ci": "0.38.0",
     "@useoptic/rulesets-base": "0.38.0",
     "@useoptic/standard-rulesets": "0.38.0"
   },
