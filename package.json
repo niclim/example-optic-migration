@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --colors",
-    "build": "yarn tsc --build --verbose",
     "typecheck": "yarn tsc --noEmit"
   },
   "repository": {
