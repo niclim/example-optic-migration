@@ -1,0 +1,35 @@
+name: "old release"
+
+on:
+  # Or this can be modified to run on a `release` branch
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
+
+      - name: install optic
+        run: npm i -g @useoptic/optic
+
+      # You'll probably want a test / lint / typecheck step here, or in a different CI pipeline
+
+      - name: test
+        run: yarn run test
+
+      - name: typecheck
+        run: yarn run tsc
+
+      - name: build rulesets
+        run: ./scripts/build-all
+
+      - name: publish rulesets
+        run: ./scripts/upload-all
+        env:
+          OPTIC_TOKEN:  ${{ secrets.OPTIC_TOKEN }}
